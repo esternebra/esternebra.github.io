@@ -1,0 +1,248 @@
+// out: ../style.css
+
+
+ /*	Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
+--------------------------------------------------------------------------------------- */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+
+// ********** FONTS
+
+// font-family: 'Lora', serif;
+// font-family: 'Open Sans', sans-serif
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&family=Open+Sans:wght@400&display=swap');
+
+html{
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+// ********** HEADER
+
+header{
+    // Position
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    // Background Styles
+    background-image: linear-gradient(0deg, rgba(24, 18, 22, 0.411), rgba(31, 22, 27, 0.212)),url(/img/baco.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: black;
+    // Font Styles
+    color: white;
+    font-family: 'Lora', serif;
+
+    .title{
+        // Position
+        width: 100%;
+        height: auto;
+        align-self: center;
+        padding: 20px;
+        h1{
+            text-transform: capitalize;
+            font-size: 18vw;
+        }
+    
+    }
+}
+
+// ********** NAV
+
+nav{
+    // Position
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    // Background Style
+    background: linear-gradient(0deg, rgba(8, 8, 8, 0.418), rgba(8, 8, 8, 0.87));
+    .logo{
+        width: 20%;
+    }
+    .menu{
+        color: white;
+        width: 80%;
+        display: inline-flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-content: stretch;
+        align-self: center;
+        font-size: 1em;
+        li{
+            cursor: pointer;
+        }
+        li:hover{
+            animation: line-through 0.5s forwards ease;
+        }
+        // Keyframe li:hover animation
+        @keyframes line-through {
+            0%   { text-decoration : transparent; }
+            100% { text-decoration: line-through; }
+        }
+    }
+}
+
+// ********** NAV
+
+main{
+    margin: 0px auto;
+    width: 90%;
+    h2{
+        text-align: center;
+        font-family: 'Lora', serif;
+        font-size: 2em;
+        padding-bottom: 70px;
+    }
+    section.portfolio{
+        padding:150px 0;
+        .barroco{
+            
+            .etapas{
+                display: flex;
+                align-content: space-between;
+                align-items: center;
+                min-height: 300px;
+                flex-grow: 1;
+                flex-basis: 300px;
+                flex-shrink: 2;
+                margin: 1px;
+                text-align: center;
+                h3{
+                    width: 100%;
+                    background:  rgba(8, 8, 8, 0.473);
+                    padding: 25px 0;
+                    font-size: 1.4em;
+                    color: white;
+                    text-transform: capitalize;
+                }
+            }
+            .primera{
+                background: url(/img/primera.jpg) center center no-repeat;
+                background-size: cover;
+                
+            }
+            .segunda{
+                background: url(/img/segunda.jpg) center center no-repeat;
+                background-size: cover;
+            }
+            .tercera{
+                background: url(/img/tercera.jpg) center top no-repeat;
+                background-size: cover;
+            }
+        }
+    }
+
+    section.equipo{
+        padding-bottom:150px;
+        .pintores{
+            // position: relative;
+            // display: flex;
+            display: flex;
+            flex-wrap: wrap;
+            .artistas{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                overflow: hidden;
+                width: 100%;
+                flex-grow: 1;
+                flex-basis: 300px;
+                flex-shrink: 2;
+                margin: 5px;
+                text-align: center;
+                img{
+                    width: 50%;
+                    border-radius: 50%;
+                }
+                h4{
+                    padding: 20px;
+                    font-size: 1.1em;
+                }
+            }
+        }
+    }
+}
+
+// ******** FOOTER
+
+footer{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    height: 300px;
+    background-color: black;
+    color: white;
+    p{
+        align-self: center;
+        text-align: center;
+        line-height: 1.4em;
+        font-size: 1em;
+    }
+}
+
+
+
+
+
+// ******** MEDIA QUERIES
+
+// This applies from 728px onwards
+@media (min-width: 780px) {
+    header{
+        .title{
+            h1{
+                font-size: 8em;
+            }
+        }
+    }
+    nav{
+        .menu{
+            font-size: 1.2em;
+        }
+    }
+    main{
+        section.portfolio{
+            .barroco {
+                display: flex;
+                flex-grow: 1;
+                .etapas{
+                    min-height: 400px;
+                    h3{
+                        font-size: 1.3em;
+                    }
+                }
+            }
+        }
+
+        section.equipo{
+            .pintores{
+                justify-content: center;
+                .artistas{
+                    flex-grow: 0;
+                    img{
+                        width: 100%;
+
+                    }
+                }
+    
+            }
+        }
+    }
+    footer{
+        p{font-size: 1.2em;}
+    }
+}
